@@ -24,13 +24,15 @@ Make sure you have nvm for easy node management.
   ```sh
   curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.1/install.sh | bash
   ```
-
+   Note - Make sure to source nvm before you can use it
+   ```sh
+    source ~/.nvm/nvm.sh
+   ```
 * Install Node Version
   ```sh
     nvm install 18.17.1
     nvm use 18.17.1
   ```
-
 If you'd like to run the containerized version of the API, you will need to have the Docker CLI
 * Linux - Instructions here https://docs.docker.com/engine/install/ubuntu/
 * MacOS and Windows - Install Docker Desktop here https://docs.docker.com/desktop/install/mac-install/ which includes the daemon and the CLI.
@@ -99,7 +101,7 @@ This API provides three endpoints
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-## Usage
+## Testing
 Integration Tests can be run using the command
    ```sh
    npm run test
