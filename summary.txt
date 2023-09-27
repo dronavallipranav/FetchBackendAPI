@@ -14,6 +14,7 @@ For the scope of the project, I decided to use sqlite. In combination with Seque
 To handle a few users, I could create a seperate table in the database with user id and add user id as a foreign key to the Ledger table which should be fine with sqlite. 
 If I were to implement this in a production environment I would use a postgres database and split out the users and transactions, and possibly even companies into different tables so that I could support having many users.
 For the production version, I would also likely add even more testing considering more edge cases as well as maybe look for optimizations within the code given I would likely have more time.
+The API's database is not persistent with server restarts, but I put a note in the README to make a quick change to acheive this.
 
 What has been a favorite school/personal project thus far? What about it that challenged you?
 
