@@ -99,6 +99,18 @@ This API provides three endpoints
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
+## Usage
+Integration Tests can be run using the command
+   ```sh
+   npm run test
+   ```
+Or to run tests with watch mode
+ ```sh
+   npm run test
+   ```
+
+
+
 ## Contact
 
 Pranav Dronavalli - dronavallipranav@gmail.com

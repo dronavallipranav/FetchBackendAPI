@@ -4,7 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "NODE_ENV=test jest",
+    "test:watch": "jest --watch",
+    "test:detectOpenHandles": "jest --detectOpenHandles"
   },
   "author": "",
   "license": "ISC",
@@ -12,5 +14,9 @@
     "express": "^4.18.2",
     "sequelize": "^6.33.0",
     "sqlite3": "^5.1.6"
+  },
+  "devDependencies": {
+    "jest": "^29.7.0",
+    "supertest": "^6.3.3"
   }
 }

@@ -22,6 +22,7 @@ app.post("/add", async (req, res) => {
   const points = req.body.points;
   const timestamp = req.body.timestamp;
 
+  if (points < 0) return res.status(400).send("Can't add negative points");
   // Checks format of request
   if (!timestamp || !points || !payer)
     return res.status(400).send("Request not formatted correctly");
@@ -124,6 +125,9 @@ app.get("/balance", async (req, res) => {
   }
 });
 
-app.listen(port, () => {
-  console.log(`API is running at http://localhost:${port}`);
-});
+if (process.env.NODE_ENV !== "test") {
+  app.listen(port, () => {
+    console.log(`API is running at http://localhost:${port}`);
+  });
+}
+module.exports = app;
