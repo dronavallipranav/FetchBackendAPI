@@ -1,0 +1,30 @@
+Why did you choose the tools, libraries, and language you used for the coding exercise?
+
+I decided to use Node.js with Express because it's one of the most common node frameworks to create efficient APIs 
+and one advantage of it is that if this was a full-stack project you can keep your entire project in JavaScript for the backend as well as the frontend language.
+The ExpressJS framework has also a broad community which allows me to troubleshoot and find simple solutions easily.
+I also decided to use sqlite to help manage data sent to the backend because it's easy to use and using Sequelize to query and operate on the data is a lot easier than implementing this by hand.
+Using sequelize did make this a little more difficult than I anticipated, and I think using Python with Flask might have made this a little easier with sqlite.
+For convienence I also decided to containerize this backend using Docker so that it could be deployed in a lightweight environment with ease.
+Finally, I added integration tests on my API with jestjs to ensure API functionality with supertest to make the HTTP requests to my backend.
+
+What are the advantages and disadvantages of your solution?
+
+For the scope of the project, I decided to use sqlite. In combination with Sequelize I was able to provide a prototype for an API that can scale up to handle multiple users. 
+To handle a few users, I could create a seperate table in the database with user id and add user id as a foreign key to the Ledger table which should be fine with sqlite. 
+If I were to implement this in a production environment I would use a postgres database and split out the users and transactions, and possibly even companies into different tables so that I could support having many users.
+For the production version, I would also likely add even more testing considering more edge cases as well as maybe look for optimizations within the code given I would likely have more time.
+
+What has been a favorite school/personal project thus far? What about it that challenged you?
+
+Recently I had the idea to add a chatbot to my website. I really wanted to add more features on my website, and I wanted to add a backend to the website for a while but couldn't think of anything justifiable to add onto a portfolio. 
+Writing the serverless backend for it wasn't terribly challenging. My website was hosted on Netlify and I used their serverless function support.
+I was able to test my changes locally running the backend and frontend on my local machine, but Netlify's build process would fail whenever I tried to deploy. The error was vague and provided little info, and so I tried contacting support
+and they said it was an issue that the developers were actively looking into. I really had the desire to get PranavBot up and running, and so I decided to migrate my website to AWS. 
+Netlify's serverless functions were powered by AWS Lambda, but I thought it was an issue with Netlify's build process and that it had nothing to do with AWS.
+I thought that migrating to AWS Lambda would fix it, but it I found out the root of the problem was some natively compiled binary (hnswlib-node) being incompatible on AWS Lambda despite using the same ISA as my local machine. 
+It was a relatively recent bug with Lambda and might just be because there was no support, but it required me to find a workaround with Amazon's cloud registry and containerizing my backend.
+That was just one of the few issues I had in the process, I also had some Cors issues with API Gateway and CloudFront's caching stripping my headers.
+It was incredibly difficult and took me two whole days of work to complete, but I felt I learned more about AWS working with it practically then I might have with a course with it with the added benefit of making me a better Troubleshooter. 
+Plus the AHA feeling of completing each of the bugs and the final feeling of completing the migration and seeing a functional PranavBot was extremely fulfulling.
+If you'd like to read more about this undertaking and all the other challenges I faced in the process, here's a link to my blog https://www.dronavalli.dev/posts/migration-to-aws/. 
