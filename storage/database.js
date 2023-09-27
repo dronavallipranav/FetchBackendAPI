@@ -19,7 +19,7 @@ const Ledger = sequelize.define("Ledger", {
 });
 
 sequelize
-  .sync({ force: true })
+  .sync({ force: true }) //change to false to allow data to persist beyond server restarts
   .then(() => console.log("Tables have been synchronized"))
   .catch((error) => console.error("Unable to synchronize the tables:", error));
 

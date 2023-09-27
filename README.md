@@ -106,10 +106,26 @@ Integration Tests can be run using the command
    ```
 Or to run tests with watch mode
  ```sh
-   npm run test
+   npm run test:watch
    ```
 
+## PERSISTENCE NOTE
+-TO ALLOW DATA IN DATABASE TO PERSIST BEYOND SERVER RESTARTS - OPEN THE "storage/database.js" FILE AND CHANGE LINE
+ ```
+ sequelize
+  .sync({ force: true })
+  .then(() => console.log("Tables have been synchronized"))
+  .catch((error) => console.error("Unable to synchronize the tables:", error));
+```
+TO
+ ```
+ sequelize
+  .sync({ force: false })
+  .then(() => console.log("Tables have been synchronized"))
+  .catch((error) => console.error("Unable to synchronize the tables:", error));
+```
 
+I chose force sync as a default as I figured it would be easier for the graders to test the functionality
 
 ## Contact
 
