@@ -15,6 +15,8 @@ To handle a few users, I could create a seperate table in the database with user
 If I were to implement this in a production environment I would use a postgres database and split out the users and transactions, and possibly even companies into different tables so that I could support having many users.
 For the production version, I would also likely add even more testing considering more edge cases as well as maybe look for optimizations within the code given I would likely have more time.
 The API's database is not persistent with server restarts, but I put a note in the README to make a quick change to acheive this.
+For the /spend route, I wasn't entirely sure in the documentation on whether we wanted all payers to be listed even ones that didn't have any deductions on their points.
+I currently iterate over all transactions in the table and add even the payers whose points were not deducted, but an optimization I could have made was break the loop early as soon as all spent points were deducted only returning payers who had a deduction to their points.
 
 What has been a favorite school/personal project thus far? What about it that challenged you?
 
