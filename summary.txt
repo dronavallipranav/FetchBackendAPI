@@ -28,6 +28,6 @@ Netlify's serverless functions were powered by AWS Lambda, but I thought it was 
 I thought that migrating to AWS Lambda would fix it, but it I found out the root of the problem was some natively compiled binary (hnswlib-node) being incompatible on AWS Lambda despite using the same ISA as my local machine. 
 It was a relatively recent bug with Lambda and might just be because there was no support, but it required me to find a workaround with Amazon's cloud registry and containerizing my backend.
 That was just one of the few issues I had in the process, I also had some Cors issues with API Gateway and CloudFront's caching stripping my headers.
-It was incredibly difficult and took me two whole days of work to complete, but I felt I learned more about AWS working with it practically then I might have with a course with it with the added benefit of making me a better Troubleshooter. 
+It was incredibly difficult and took me two whole days of work to complete, but I felt I learned more about AWS working on it practically then I might have with a AWS course with the added benefit of making me a better Troubleshooter. 
 Plus the AHA feeling of completing each of the bugs and the final feeling of completing the migration and seeing a functional PranavBot was extremely fulfulling.
 If you'd like to read more about this undertaking and all the other challenges I faced in the process, here's a link to my blog https://www.dronavalli.dev/posts/migration-to-aws/. 
